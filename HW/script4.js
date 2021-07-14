@@ -31,7 +31,7 @@ const personalMovieDB = {
     }
   },
   addMyFilms: function () {
-    for (let i = 0; i <= 2; i++) {
+    for (let i = 0; i < 2; i++) {
       const a = prompt("Один из последних просмотренных фильмов?", ""),
         b = prompt("На сколько оцените его?", "");
 
@@ -56,20 +56,40 @@ const personalMovieDB = {
     }
   },
   writeYourGenres: function () {
-    for (let i = 1; i <= 3; i++) {
-      personalMovieDB.genres[i - 1] = prompt(
-        "Ваш любимый жанр под номером ${номер по порядку}",
-        ""
-      );
-      while (
-        personalMovieDB.genres[i - 1] == null &&
-        personalMovieDB.genres[i - 1] == ""
-      ) {
-        personalMovieDB.genres[i - 1] = prompt(
-          "Ваш любимый жанр под номером ${номер по порядку}",
-          ""
-        );
+    for (let i = 1; i < 2; i++) {
+      let genre = prompt(`Ваш любимый жанр под номером ${i}`);
+      if(genre === '' || genre == null) {
+        console.log('Вы ввели некорректные данные или не ввели их совсем');
+        i--;
+      } else {
+        personalMovieDB.genres[i - 1] = genre;
       }
+      //мой вариант
+      // personalMovieDB.genres[i - 1] = prompt(
+      //   "Ваш любимый жанр под номером ${номер по порядку}",
+      //   ""
+      // );
+      // while (
+      //   personalMovieDB.genres[i - 1] == null &&
+      //   personalMovieDB.genres[i - 1] == ""
+      // ) {
+      //   personalMovieDB.genres[i - 1] = prompt(
+      //     "Ваш любимый жанр под номером ${номер по порядку}",
+      //     ""
+      //   );
+      // }
+
+      // Альтернативный вариант из урока
+
+            // let genres = prompt(`Введите ваши любимые жанры через запятую`).toLowerCase();
+
+            // if (genres === '' || genres == null) {
+            //     console.log('Вы ввели некорректные данные или не ввели их вовсе');
+            //     i--;
+            // } else {
+            //     personalMovieDB.genres = genres.split(', ');
+            //     personalMovieDB.genres.sort();
+            // }
     }
     personalMovieDB.genres.forEach((value, index) =>
       console.log(`Любимый жанр #${index + 1} - это ${value}`)
@@ -88,4 +108,3 @@ const personalMovieDB = {
     }
   },
 };
-
