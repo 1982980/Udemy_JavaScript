@@ -24,27 +24,47 @@ const movieDB = {
   ],
 };
 //удаляю рекламный блок
-const adv = document.querySelector(".promo__adv");
-adv.remove();
+// const adv = document.querySelector(".promo__adv");
+// adv.remove();
+const adv = document.querySelectorAll(".promo__adv img"),
+  poster = document.querySelector(".promo__bg"),
+  genre = poster.querySelector(".promo__genre"),
+  movieList = document.querySelector(".promo__interactive-list");
+
+adv.forEach((item) => item.remove());
+
+genre.textContent = "драма";
+
+poster.style.backgroundImage = 'url("img/bg.jpg")';
+movieList.innerHTML = "";
+movieDB.movies.sort();
+
+movieDB.movies.forEach((film, i) => {
+  movieList.innerHTML += `
+    <li class="promo__interactive-item">${i + 1}. ${film}
+        <div class="delete"></div>
+    </li>
+  `;
+});
 
 //меняю "Комедия" на "драма"
-function changeGanre(was, will) {
-  let genreWas = document.querySelector(".promo__genre").textContent;
-  if (genreWas == "КОМЕДИЯ") {
-    document.querySelector(".promo__genre").textContent = "Драма";
-  }
-}
-changeGanre();
+// function changeGanre(was, will) {
+//   let genreWas = document.querySelector(".promo__genre").textContent;
+//   if (genreWas == "КОМЕДИЯ") {
+//     document.querySelector(".promo__genre").textContent = "Драма";
+//   }
+// }
+// changeGanre();
 
 //меняю задний фон постера
-const promo = document.querySelector(".promo__bg");
-console.log(promo);
-promo.style.backgroundImage =
-  'url("C:/Users/Roman/Git_Projects/Udemy_Javascript/HW/HW5/project/img/bg.jpg")';
+// const promo = document.querySelector(".promo__bg");
+// console.log(promo);
+// promo.style.backgroundImage =
+//   'url("C:/Users/Roman/Git_Projects/Udemy_Javascript/HW/HW5/project/img/bg.jpg")';
 
 //Список фильмов на странице сформировать на основании данных из этого JS файла.
 //Отсортировать их по алфавиту в обратном порядке
 //Добавить нумерацию выведенных фильмов
-const sortedList = movieDB.movies.sort().reverse();
-const films = document.querySelectorAll(".promo__interactive-item");
-films.forEach((item, i) => (item.textContent = `${i + 1}. ${sortedList[i]}`));
+// const sortedList = movieDB.movies.sort().reverse();
+// const films = document.querySelectorAll(".promo__interactive-item");
+// films.forEach((item, i) => (item.textContent = `${i + 1}. ${sortedList[i]}`));
