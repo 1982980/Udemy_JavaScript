@@ -21,13 +21,15 @@ arr.forEach(function (item, i, arr) {
 });
 
 // const str = prompt("?", "");
-// const product = str.split(", "); // м
+// const product = str.split(", "); // мeтод который дел
 // product.sort(); //метод сортировки, который сортирует как строку
 // const productStr = product.join("; ");
 // console.log(productStr);
 
 const arrForSort = [2, 13, 26, 8, 10];
-// arrForSort.sort(compareNum);
+const a = "Bread Eve Chack Greg";
+console.log(a.split(' '));
+arrForSort.sort(compareNum);
 
 function compareNum(a, b) {
   return a - b;

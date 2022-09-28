@@ -24,7 +24,3 @@ function learnJS(lang, callback) {
 //   console.log("Я прошел этот урок");
 // })
 
-function done() {
-  console.log("Я прошел этот урок");
-}
-learnJS("Js", done);

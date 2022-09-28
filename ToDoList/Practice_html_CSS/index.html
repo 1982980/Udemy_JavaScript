@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#" method="GET">
+      <div>
+        <p>Имя</p>
+        <input
+          type="text"
+          placeholder="Введите текст"
+          tabindex="1"
+          name="username"
+        />
+      </div>
+      <div>
+        <p>Пароль</p>
+        <input
+          type="password"
+          placeholder="Введите пароль"
+          tabindex="2"
+          name="userpass"
+        />
+      </div>
+      <div>
+        <p>Телефон</p>
+        <input type="tel" placeholder="+38" tabindex="3" name="usertel" />
+      </div>
+      <div>
+        <p>Пол</p>
+        <div>
+          <input type="radio" name="gender" tabindex="4" value="male" checked />
+          <span>Мужской</span>
+        </div>
+        <div>
+          <input type="radio" name="gender" tabindex="4" value="female" />
+          <span>Женский</span>
+        </div>
+      </div>
+      <div>
+        <p>Имущество</p>
+        <div>
+          <input type="checkbox" name="flat" value="yes" checked tabindex="5" />
+          Квартира
+        </div>
+        <div>
+          <input type="checkbox" name="car" value="yes" disabled tabindex="6" />
+          Автомобиль
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="house"
+            value="yes"
+            disabled
+            tabindex="7"
+          />
+          Дом
+        </div>
+      </div>
+      <br />
+      <div>
+        <p>Место для текста</p>
+        <textarea name="textarea" cols="30" rows="10" tabindex="8"></textarea>
+      </div>
+      <div>
+        <p>Добавить файл</p>
+        <input type="file" name="file" value="yes" tabindex="9" />
+      </div>
+      <div>
+        <p>Выпадающий список</p>
+        <select name="color" tabindex="10">
+          <option value="red">Красный</option>
+          <option value="green">Зеленый</option>
+          <option value="white" selected>Белый</option>
+        </select>
+      </div>
+      <div>
+        <p>Действие</p>
+        <button tabindex="11" type="submit">Отправить</button>
+        <button tabindex="12" type="reset">Очистить</button>
+      </div>
+    </form>
+    <div class="about">
+      <div class="about__body">
+        <div class="about__header">
+          <div class="about__title">ABOUT</div>
+          <div class="about__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+            ab natus optio id nemo in, fuga ipsam pariatur totam, aperiam quam
+            dolor. Sunt suscipit modi, fuga aperiam facere quo porro.
+          </div>
+        </div>
+        <div class="about__row">
+          <div class="about__column">
+            <div class="item-about">
+              <div class="item-about__icon"></div>
+              <div class="item-about__title"></div>
+              <div class="item-about__text"></div>
+            </div>
+          </div>
+          <div class="about__column">
+            <div class="item-about__icon"></div>
+            <div class="item-about__title"></div>
+            <div class="item-about__text"></div>
+          </div>
+          <div class="about__column">
+            <div class="item-about__icon"></div>
+            <div class="item-about__title"></div>
+            <div class="item-about__text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

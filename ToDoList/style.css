@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+  min-height: 100vh;
+
+}
+
+.todolist {
+  position: relative;
+  width: 550px;
+  background: #fff;
+}
+.todolist h1 {
+  color: rgba(175, 47, 47, 0.15);
+  font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  background: #f5f5f5;
+  text-align: center;
+}
+.todolist--form {
+  position: relative;
+  padding: 20px;
+  border-bottom: 1px solid #c9c7c7;
+  background: #fcfafa
+
+}
+.todolist--list {
+  position: relative;
+}
+.todolist--form {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.todolist--form button {
+  visibility: hidden;
+  appearance: none;
+}
+.todolist--form span {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todolist--form span::before {
+  content: "";
+  position:absolute;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  transform: rotate(-45deg);
+}
+
+.todolist--item {
+  position: relative;
+  list-style: none;
+  padding: 20px;
+  border-bottom: 1px solid #c9c7c7;
+}
+.todolist--item label {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.todolist--item label input {
+  visibility: hidden;
+  appearance: none;
+  /* нужно узнать что это */
+}
+.todolist--item label p {
+  position: absolute;
+}
+.todolist--item label span {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #c9c7c7;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todolist--item label span::before {
+  content: '';
+  position:absolute;
+  top: 10px;
+  width: 20px;
+  height: 10px;
+  border-left: 2px solid rgb(19, 223, 145);
+  border-bottom: 2px solid rgb(19, 223, 145);
+  transform: rotate(-40deg);
+}
+.todolist--item label input:checked ~ p {
+  text-decoration: line-through;
+  color: #ccc;
+}
+.todolist--item label input:checked ~ span {
+  background: #03a9f4;
+}
+.todolist--item label input:checked ~ span::before {
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+;

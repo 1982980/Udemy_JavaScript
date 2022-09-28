@@ -1,0 +1,12 @@
+.block {
+  padding: 30px;
+}
+
+.block .block-text {
+  font-size: 80px;
+}
+
+.block .block-text span {
+  color: green;
+}
+/*# sourceMappingURL=style.css.map */

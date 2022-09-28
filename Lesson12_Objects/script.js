@@ -30,8 +30,3 @@ options.makeTest();
 //   counter++;
 // }
 // console.log(counter);
-
-console.log(Object.keys(options).length);
-
-const { border, bg } = options.color;
-console.log(bg);

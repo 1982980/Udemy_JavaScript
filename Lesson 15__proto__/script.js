@@ -23,3 +23,15 @@ const soldier = {
 // Object.setPrototypeOf(John, soldier);
 const John = Object.create(soldier);
 console.log(John.sayHello());
+
+const auto = {
+  engine: 3000,
+  weight: 1500,
+  power: 250,
+  getPrice: function(){
+    console.log('Price this auto 1000$');
+  }
+}
+
+const bmw = Object.create(auto);
+console.log(bmw.getPrice());
