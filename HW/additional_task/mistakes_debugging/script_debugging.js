@@ -76,3 +76,5 @@ function transferWaitors(data) {
 }
 
 transferWaitors(restorantData);
+
+console.log(("a">"b"));
