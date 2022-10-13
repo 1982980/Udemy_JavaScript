@@ -24,9 +24,11 @@ const movieDB = {
   ],
 };
 //1
-const adv = document.querySelector(".promo__adv");
-const advImg = adv.querySelectorAll("img");
-console.log(advImg);
+const adv = document.querySelector(".promo__adv"),
+  advImg = adv.querySelectorAll("img"),
+  genre = document.querySelector(".promo__genre"),
+  bgImage = document.querySelector(".promo__bg"),
+  movies = document.querySelectorAll(".promo__interactive-item");
 //* usual loop
 // for (let i = 0; i < advImg.length; i++) {
 //   advImg[i].remove();
@@ -38,14 +40,17 @@ console.log(advImg);
 //* method forEach()
 advImg.forEach((e) => e.remove());
 //2
-document.querySelector(".promo__genre").textContent = "ДРАМА";
+genre.textContent = "ДРАМА";
 //3
-document.querySelector(".promo__bg").style.backgroundImage =
+bgImage.style.backgroundImage =
   'url("/HW/HW43_project_mDB_1/project/img/bg.jpg")';
 //4 & 5
-const movies = document.querySelectorAll(".promo__interactive-item");
-movieDB.movies.sort();
-movies.forEach((elem, i) => {
-  elem.textContent = `${i + 1}. ${movieDB.movies[i]}`;
-});
-
+//* var1 использую textContent
+// movies.forEach((elem, i) => {
+//   elem.textContent = `${i + 1}. ${movieDB.movies[i]}`;
+// });
+//* var2 использую innerHTML
+movieDB.movies.sort(); //* сортировка по алфавиту
+movies.forEach(function (elem, i) {
+  elem.innerHTML = `${i + 1}. ${movieDB.movies[i]}`;
+}); //* добавляю каждому элементу номер по порядку и название из переменной movieDB
