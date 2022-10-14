@@ -1,6 +1,6 @@
 const btns = document.querySelectorAll("button"),
-  overlay = document.querySelector(".overlay");
-// btn.onclick = () => alert("Click");
+  overlay = document.querySelector(".overlay");//*сохраняю элементы страницы в переменную
+// btn.onclick = () => alert("Click");//* один из методов вызова обработчика событий, но он неэффективен, так как его сложно удалить/отключить и его нельзя повесить несколько обработчиков на одно событие(обработчик перезапишется последним последним обработчиком)
 btn.addEventListener("click", () => alert("Click"));
 btn.addEventListener("click", () => alert("Click one more time"));
 
@@ -23,7 +23,7 @@ link.addEventListener("click", (e) => {
   console.log(e.target);
 });
 
-//для нескольких єлементов используем forEach. Это из-за псевдомассива
+//для нескольких элементов используем forEach. это возможно только, если элементы получены querySelectorALL
 btns.forEach((btn) => {
   btn.addEventListener("click", deleteElement);
 });
