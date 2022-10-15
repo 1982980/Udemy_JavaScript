@@ -10,24 +10,28 @@ buttonTwo.addEventListener("click", handleClick);
 
 buttonTwo.removeEventListener("click",handleClick);//todo для того чтобы применять removeEventListener нужно вторым параметром передавать имя функции, которую создали раньше. Если в обработчик события передавать безымянную функцию или стрелочную, то снятие обработчика события не будет работать. Для этого нужно использовать только именованную функцию
 */
+/*
 const buttons = document.querySelectorAll(".btn");
 console.log(buttons);
 
 function handleClick() {
   console.log("It's cool");
+  this.hidden = true;
+  // Внутри обработчика события, а точнее его функции this ссылается на текущий элемент, то есть на тот, на котором, как говорят, «висит» (т.е. назначен) обработчик.
 }
 buttons.forEach((btn) => btn.addEventListener("click", handleClick));
+*/
 
 const button = document.querySelector(".btn"); //* получил элемент в переменную
 
-button.addEventListener("click", hideText);
+button.addEventListener("click", hideText, true);
 function hideText() {
   //* создал функцию для скрытия текста
   const text = document.querySelector(".text"); //* получил в локальную переменную нужный элемент
   text.hidden = true; //* задал CSS свойство элементу hidden = true, текст скрылся
   const button = document.querySelector(".btn"); //* получил в локальную переменную кнопку
-  button.removeEventListener("click", hideText); //* удалил обработчик событий на эту функцию
-  button.addEventListener("click", showText); //* добавил обработчик событий на другую функцию, которая покажет текст
+  // button.removeEventListener("click", hideText); //* удалил обработчик событий на эту функцию
+  button.addEventListener("click", showText, true); //* добавил обработчик событий на другую функцию, которая покажет текст
 }
 
 function showText() {
@@ -35,7 +39,7 @@ function showText() {
   const text = document.querySelector(".text"); //* получил в локальную переменную нужный элемент
   text.hidden = false; //* задал CSS свойство элементу hidden = false, текст показался
   const button = document.querySelector(".btn"); //* получил в локальную переменную кнопку
-  button.removeEventListener("click", showText); //* удалил обработчик событий на эту функцию
+  // button.removeEventListener("click", showText); //* удалил обработчик событий на эту функцию
   button.addEventListener("click", hideText); //* добавил обработчик событий на другую функцию, которая скроет текст
 }
 /* 1. вешаю обработчик событий на кнопку и передаю в него функцию скрытия текста

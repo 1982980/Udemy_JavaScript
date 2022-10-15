@@ -7,8 +7,8 @@ const box = document.getElementById("box"), //получил один элеме
   oneHeart = document.querySelector(".heart"), //получил один первый элемент по css-селектору
   wrapper = document.querySelector(".wrapper"); //получил один первый элемент по css-селектору
 
-// box.style.backgroundColor = "blue";//*передаю строкой css-совйство используя синтаксис CSS
-// box.style.width = "500px";//*передаю строкой css-совйство используя синтаксис CSS
+// box.style.backgroundColor = "blue";//*передаю строкой css-свойство используя синтаксис CSS
+// box.style.width = "500px";//*передаю строкой css-свойство используя синтаксис CSS
 box.style.cssText = "backgroung-color: green; width: 300px"; //*передаю строкой свойство css используя синтаксис CSS и через ; добавляю любое количество свойств CSS
 
 btns[1].style.borderRadius = "100%"; //*передаю строкой свойство css используя синтаксис CSS
