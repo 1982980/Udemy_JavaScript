@@ -1,3 +1,4 @@
+/*
 const pane = document.querySelectorAll(".pane");
 pane.forEach((e) =>
   e.insertAdjacentHTML(
@@ -19,3 +20,14 @@ function showAllBlocks() {
   console.log("It's OK");
 }
 showAll.addEventListener("click", showAllBlocks);
+*/
+const pane = document.querySelectorAll(".pane");
+for (let i = 0; i <= pane.length; i++) {
+  pane[i].insertAdjacentHTML(
+    "afterbegin",
+    '<button class="remove-button">[x]</button>'
+  );
+  pane[i]
+    .querySelector(".remove-button")
+    .addEventListener("click", (e) => (e.parentNode.hidden = true));
+}
