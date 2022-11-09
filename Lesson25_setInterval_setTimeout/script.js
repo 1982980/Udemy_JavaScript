@@ -77,3 +77,5 @@ btn.addEventListener("click", myAnimation
 //   console.log("Hello");
 //   id = setTimeout(log, 500);
 // }, 500);
+
+

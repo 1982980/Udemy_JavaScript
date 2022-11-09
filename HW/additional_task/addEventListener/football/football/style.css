@@ -1,0 +1,20 @@
+body {
+  height: 2000px;
+}
+
+#field {
+  /* box-sizing: border-box; */
+  width: 200px;
+  height: 150px;
+  border: 10px solid black;
+  background: #00ff00;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+#ball {
+position: absolute;
+top: 10px;
+left: 10px;
+
+}
