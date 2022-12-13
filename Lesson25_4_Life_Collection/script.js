@@ -4,11 +4,11 @@
 const boxesQuery = document.querySelectorAll(".box");
 const boxesGet = document.getElementsByClassName("box");
 
-boxesQuery.forEach((box) => {
-  if (box.matches(".this")) console.log("This one");
-});
+// boxesQuery.forEach((box) => {
+//   if (box.matches(".this")) console.log("This one");
+// });
 
-console.log(boxesQuery[0].closest(".wrapper"));
+// console.log(boxesQuery[0].closest(".wrapper"));
 // boxesQuery[0].remove();
 // boxesGet[0].remove();
 
@@ -19,12 +19,12 @@ console.log(boxesQuery[0].closest(".wrapper"));
 //   // boxesGet[boxesGet.length] = div; //? метод length для живых HTML коллекций не работает и вернет ошибку
 // }
 
-// console.log(boxesQuery);
-// console.log(boxesGet);
+console.log(boxesQuery);
+console.log(boxesGet);
 // // console.log(document.body.children);
 
 // console.log(Array.from(boxesGet));
 
-[1, -2, 15, 2, 0, 8].sort(function(a, b) {
-	console.log( a + " <> " + b );
-});
+// [1, -2, 15, 2, 0, 8].sort(function (a, b) {
+//   console.log(a + " <> " + b);
+// });

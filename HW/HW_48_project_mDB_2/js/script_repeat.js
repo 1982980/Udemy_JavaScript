@@ -1,42 +1,42 @@
 "use strict";
-document.addEventListener('DOMContentLoaded',()=>{
-const movieDB = {
-  movies: [
-    "Логан",
-    "Лига справедливости",
-    "Ла-ла лэнд",
-    "Одержимость",
-    "Скотт Пилигрим против...",
-  ],
-};
-//1
-const adv = document.querySelector(".promo__adv"),
-  advImg = adv.querySelectorAll("img"),
-  genre = document.querySelector(".promo__genre"),
-  bgImage = document.querySelector(".promo__bg"),
-  movies = document.querySelectorAll(".promo__interactive-item"),
-  btn = document.querySelector('.adding_confirm'),
-  input = document.querySelector('.adding__input'),
-  checkbox = document.querySelector('.checkbox');
+document.addEventListener("DOMContentLoaded", () => {
+  const movieDB = {
+    movies: [
+      "Логан",
+      "Лига справедливости",
+      "Ла-ла лэнд",
+      "Одержимость",
+      "Скотт Пилигрим против...",
+    ],
+  };
 
-advImg.forEach((e) => e.remove());
-//2
-genre.textContent = "ДРАМА";
-//3
-bgImage.style.backgroundImage =
-  'url("/HW/HW43_project_mDB_1/project/img/bg.jpg")';
-//4 & 5
-movieDB.movies.sort();
-//* сортировка по алфавиту
-movies.forEach(function (elem, i) {
-  elem.innerHTML = `${i + 1}. ${movieDB.movies[i]}`;
+  const advs = document.querySelectorAll(".promo__adv img"),
+    oldBg = document.querySelector(".promo__bg"),
+    genre = document.querySelector(".promo__genre"),
+    filmList = document.querySelectorAll(".promo__interactive-list li");
+
+  function deleteAdv() {
+    advs.forEach((e) => e.remove());
+  }
+  function changeBackground() {
+    oldBg.style.backgroundImage = 'url("/HW/HW_48_project_mDB_2/img/bg.jpg")';
+  }
+  function changeGenre(genreName) {
+    genre.textContent = genreName;
+  }
+
+  function createMovieList(newList, oldList) {
+    newList.movies.sort();
+
+    oldList.forEach(
+      (elem, i) =>
+        (elem.innerHTML = `${i + 1}.${
+          newList.movies[i]
+        } <div class="delete"></div>`)
+    );
+  }
+  createMovieList(movieDB, filmList);
+  changeGenre("Драма");
+  deleteAdv();
+  changeBackground();
 });
-//* добавляю каждому элементу номер по порядку и название из переменной movieDB
-
-function addNewFilm(){
-  btn.addEventListener('submit',()=> {
-    input
-  });
-}
-}
-);
