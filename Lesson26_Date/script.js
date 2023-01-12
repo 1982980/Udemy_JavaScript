@@ -1,7 +1,7 @@
 "use strict";
-const now = new Date("2020-05-01");
-// new Date.parse('2020-05-01'); // делает тоже что и вариант выше
-
+const now = new Date("1980-02-26");
+// console.log(new Date.parse("2020-05-01")); // делает тоже что и вариант выше //! что-то не работает???
+console.log(now);
 //TODO Методы Геттеры Getters -> мы что-то получаем
 
 // console.log(now.getFullYear()); //год только 4-х значный
@@ -15,14 +15,15 @@ const now = new Date("2020-05-01");
 
 //TODO Методы Сеттеры Setters -> мы что-то задаём
 
-// console.log(now.setHours(7)); //в браузере и IDE будут разные значения. IDE берет время по Гринвичу(UTC), а браузер локальное время компа
+console.log(now.setHours(7)); //в браузере и IDE будут разные значения. IDE берет время по Гринвичу(UTC), а браузер локальное время компа
 // console.log(now.setHours(7, 43)); //в браузере и IDE будут разные значения. IDE берет время по Гринвичу(UTC), а браузер локальное время компа
-// console.log(now);
+console.log(now);
 
 let start = new Date();
-for(let i = 0; i < 10000; i++) {
+console.log(start);
+for (let i = 0; i < 10000; i++) {
   let some = i ** 3;
 }
 
 let end = new Date();
-alert(`Цикл сработал за ${end - start}`);
+console.log(`Цикл сработал за ${end - start}`);

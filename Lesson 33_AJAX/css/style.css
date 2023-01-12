@@ -1,0 +1,19 @@
+body{
+  background-color: aqua;
+}
+.main{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+label{
+  display: block;
+  font-weight: 700;
+  font-size: large;
+}
+input{
+  height: 30px;
+  width: 200px;
+  font-size: 30px;
+}

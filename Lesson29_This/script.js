@@ -69,6 +69,7 @@
 // тут this = event.target и иногда также используется
 // });
 //в стрелочной функции нет своего контекста функции, она принимает контекст функции родителя
+/*
 const obj = {
   num: 5,
   // контекст функции объекта => это сам объект
@@ -84,3 +85,56 @@ const obj = {
 obj.sayNum();
 //другой синтаксис стрелочной функции
 const double = a => a * 2;
+*/
+
+/*
+let obj, method;
+
+obj = {
+  go: function() {
+    alert(this);
+  }
+};
+
+obj.go();               // (1) [object Object]
+
+(obj.go)();             // (2) [object Object]
+
+(method = obj.go)();    // (3) undefined
+
+(obj.go || obj.stop)(); // (4) undefined
+*/
+/*
+function askPassword(ok, fail) {
+  let password = prompt("Password?", '');
+  if (password == "rockstar") ok();
+  else fail();
+}
+
+let user = {
+  name: 'Вася',
+
+  loginOk() {
+    console.log(`${this.name} logged in`);
+  },
+
+  loginFail() {
+    console.log(`${this.name} failed to log in`);
+  },
+
+};
+
+askPassword(user.loginOk.bind(user), user.loginFail.bind(user));
+*/
+function makeUser() {
+  return {
+    name: "John",
+    ref() {
+      return this;
+    }
+  };
+}
+
+let user = makeUser();
+
+console.log( user.ref().name ); // Каким будет результат?
